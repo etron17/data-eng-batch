@@ -2,7 +2,7 @@
 
 ## Airflow Python Module Installation
 
-## Create Ariflow Account
+## Create Airflow Account
 
 ## Install Postgre for Database on Airflow
 
