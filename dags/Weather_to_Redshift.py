@@ -48,7 +48,7 @@ def etl(**context):
         raise
 
 """
-CREATE TABLE keeyong.weather_forecast (
+CREATE TABLE BigDO.weather_forecast (
     date date,
     temp float,
     min_temp float,
