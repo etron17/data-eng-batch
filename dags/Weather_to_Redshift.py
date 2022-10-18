@@ -38,7 +38,7 @@ def etl(**context):
         ret.append("('{}',{},{},{})".format(day, d["temp"]["day"], d["temp"]["min"], d["temp"]["max"]))
 
     cur = get_Redshift_connection()
-    insert_sql = """DELETE FROM keeyong.weather_forecast;INSERT INTO keeyong.weather_forecast VALUES """ + ",".join(ret)
+    insert_sql = """DELETE FROM BigDO.weather_forecast;INSERT INTO BigDO.weather_forecast VALUES """ + ",".join(ret)
     logging.info(insert_sql)
     try:
         cur.execute(insert_sql)
