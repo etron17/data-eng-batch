@@ -39,9 +39,42 @@ sudo pip3 install typing_extensions
 ```
 
 ## Create Airflow Account
+```
+sudo groupadd airflow
+sudo useradd -s /bin/bash airflow -g airflow -d /var/lib/airflow -m
+```
 
 ## Install Postgre Database on Airflow
 
+```
+sudo apt-get install -y postgresql postgresql-contrib
+```
+
+```
+$ sudo su postgres
+$ psql
+psql (10.12 (Ubuntu 10.12-0ubuntu0.18.04.1))
+Type "help" for help.
+
+postgres=# CREATE USER airflow PASSWORD 'airflow';
+CREATE ROLE
+postgres=# CREATE DATABASE airflow;
+CREATE DATABASE
+postgres=# \q
+$ exit
+```
+
 ## Initialize Airflow Environment
+```
+sudo su airflow
+$ cd ~/
+$ mkdir dags
+$ AIRFLOW_HOME=/var/lib/airflow airflow db init
+$ ls /var/lib/airflow
+airflow.cfg  airflow.db  dags   logs  unittests.cfg
+```
+
 
 ## Start Webserver and Scheduler
+```
+```
